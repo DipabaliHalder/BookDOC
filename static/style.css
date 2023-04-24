@@ -1,0 +1,146 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+html {  
+    scroll-behavior: smooth;  
+}
+
+a{text-decoration: none;}
+
+a:hover{text-decoration: none;}
+
+li{list-style: none;}
+
+p{
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgba(163, 156, 156, 0.911);
+    font-family:'Alkatra', cursive;
+}
+
+.extra-div h2{
+    font-size: 1rem;
+    margin: 20px 0 15px 0;
+    font-weight: bold;
+    line-height: 1.1;
+    word-spacing: 4px;
+    color: #F35650;
+}
+
+svg{color: #F35650;}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#ee5f5fbb,#ee5f5fbb), url('https://img.freepik.com/free-photo/team-young-specialist-doctors-standing-corridor-hospital_1303-21199.jpg?w=740&t=st=1680442551~exp=1680443151~hmac=40a100d78d3b4ba76641ccd3612fbf9bafd9f16f47eacdfd90fb2100428caa42');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    clip-path: polygon(100% 0%,100% 77%,50% 100%,0 75%,0 0);
+    position: relative;
+}
+.header:before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    opacity: .1;
+    z-index: -1;
+    background: linear-gradient(to right,#ee5f5fbb 0%,#ee5f5fbb 0%,#ee5f5fbb 100%);
+}
+.navbar:before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    opacity: .1;
+    z-index: -1;
+    background: linear-gradient(to right,#ee5f5fbb 0%,#ee5f5fbb 0%,#ee5f5fbb 100);
+}
+
+.nav-item a{
+    color: #fff!important;
+    font-weight: bold;
+}
+
+.nav-item a:hover{
+    text-decoration: underline white 2px;
+}
+
+.header-selection{
+    width: 100%;
+    height: inherit;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.center-div{
+    width: 100%;
+    height: auto;
+    padding-top: 18%;
+    font-family: 'Alkatra', cursive;
+}
+
+.header-buttons a{
+    border: 1px solid #fff;
+    border-radius: 100px;
+    margin: 0 5px;
+    padding: 12px 35px;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.header-buttons a:hover{
+    color: #F35650;
+    background: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgb(0,0,0,0.3);
+}
+
+.center-div p{
+    font-size: 1.1rem;
+    padding: 10px 0 20px 0;
+    color: white;
+}
+
+.header-extradiv{
+    width: 100%;
+    height: auto;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.extra-div{
+    background: #fff;
+    border: medium none;
+    padding: 50px!important;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.extra-div:hover{
+    box-shadow: 0 0 20px 0 rgb(0,0,0,0.3);
+    transform: translateY(-20px);
+}
+
+.what{
+    background-color: #F35650;
+    color: #fff;
+    font-family: 'Alkatra', cursive;
+    height: 500px !important;
+}
+.stats{
+    color: #F35650;
+}
+
+footer{
+    color: #F35650;
+}
