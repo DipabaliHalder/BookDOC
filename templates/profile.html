@@ -1,0 +1,48 @@
+{% extends "userlayout.html" %}
+{% block content %}
+<body>
+    <section class="d-flex flex-column m-5 justify-content-center align-tems-center">
+        <div class="container">
+            <div class="row">
+                {% if msg %}
+                    <div class="alert alert-light alert-dismissible" style="width: 30%; left:35%" role="alert" data-mdb-autohide="true" data-mdb-delay="20">
+                        {{msg}}    
+                        <span type="button" class="close btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></span>
+                    </div>
+                {% endif %}
+                <div class="col-md-10 mx-auto rounded shadow bg-white">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form class="m-5" action="{{url_for('profileupdate',user=user)}}" method="POST" name="login">
+                                <div>
+                                    <h3 class="text-secondary text-center" style="margin-bottom:20px; border-bottom:2px solid #F35650;"><b>UPDATE PROFILE DETAILS</b></h3>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-secondary" for="username"> <strong>Username</strong></label>
+                                    <input class="form-control" type="text" name="username" value="{{user[1]}}" disabled>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-secondary" for="email"><strong>Email</strong></label>
+                                    <input class="form-control" type="email" name="email" value="{{user[2]}}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-secondary" for="pass"><strong>Password</strong></label>
+                                    <input type="password" class="form-control" value="{{user[3]}}" name="pass" required>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="form-control btn btn btn-outline-danger" id="liveAlertBtn"><strong>UPDATE DETAILS</strong></button>
+                                </div>   
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <img src="../static/Mobile login-bro.svg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+{%endblock%}

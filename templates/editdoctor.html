@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .form-control:focus {
+            border-color: #F35650;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #F35650;
+        }
+    </style>
+</head>
+<body class="bg-danger-subtle">
+    <form action="{{url_for('updatedoctor',id=id)}}" method="POST">
+        <div class="container bg-white rounded shadow p-5" style="height: 50%; width: 40%; margin-top: 4%;">
+            <h2 class="text-secondary text-center" style="border-bottom:4px solid #F35650;"><b>EDIT DOCTOR</b></h2>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="id">Doctor Id</label>
+                    <input class="form-control" type="number" name="id" id="" value="{{doctor.0}}" readonly>    
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="name">Doctor Name</label>
+                    <input class="form-control" type="text" name="name" id="" value="{{doctor.1}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="mobile">Mobile</label>
+                    <input class="form-control" type="tel" name="mobile" id="" value="{{doctor.2}}" required>    
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="" value="{{doctor.3}}" required>        
+                </div>
+            </div>
+            <div class="">
+                <label class="form-label" for="clinic">Clinic</label><br>
+                {% if doctor.6=="Delhi" %}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Delhi" required checked>
+                            <label class="form-label" for="Delhi">Delhi</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Karnataka">
+                            <label class="form-label" for="Karnataka">Karnataka</label>        
+                        </div>
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Mumbai">
+                            <label class="form-label" for="Mumbai">Mumbai</label>        
+                        </div>
+                    </div>
+                {% elif doctor.6=="Karnataka" %}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Delhi" required>
+                            <label class="form-label" for="Delhi">Delhi</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Karnataka" checked>
+                            <label class="form-label" for="Karnataka">Karnataka</label>        
+                        </div>
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Mumbai">
+                            <label class="form-label" for="Mumbai">Mumbai</label>        
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Delhi" required>
+                            <label class="form-label" for="Delhi">Delhi</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Karnataka">
+                            <label class="form-label" for="Karnataka">Karnataka</label>        
+                        </div>
+                        <div class="col-md-4">
+                            <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="clinic" id="" value="Mumbai" checked>
+                            <label class="form-label" for="Mumbai">Mumbai</label>        
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="category">Category</label>
+                    <input class="form-control" type="text" name="category" id="" value="{{doctor.4}}" required>                
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="amount">Fee Amount</label>
+                    <input class="form-control" type="number" name="amount" id="" value="{{doctor.5}}" required>
+                </div>
+            </div>
+            <button type="submit" class="form-control btn btn btn-outline-danger" id="liveAlertBtn"><strong>UPDATE</strong></button>
+        </div>
+    </form>
+</body>
+</html>

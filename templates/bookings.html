@@ -1,0 +1,43 @@
+{% extends "adminlayout.html" %}
+{% block content %}
+<body>
+    <div class="m-3">
+        <h3 class="text-secondary text-center" style="font-family: 'Alkatra', cursive; margin-top: 3%;"><img src="../static/bell-1.1s-200px.svg" alt="" height="5%" width="5%">Appointments<img src="../static/bell-1.1s-200px.svg" alt="" height="5%" width="5%"></h3>
+        {% for i in c %}
+        <h4 class="text-danger" style="font-family: 'Alkatra', cursive;">{{i}}</h4>
+        <table class="table" style="margin-top: 1%;">
+            <thead>
+                <tr class="bg-danger text-light">
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">User's Email</th>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Patient</th>
+                    <th scope="col">Date of Appointment</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Fee</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in book %}
+                {% if b.1 == i %}
+                <tr>
+                    <td>{{b.0}}</td>
+                    <td>{{b.2}}</td>
+                    <td>{{b.3}}</td>
+                    <td>{{b.4}}</td>
+                    <td>{{b.5}} ({{b.6}})</td>
+                    <td>{{b.7}}</td>
+                    <td>{{b.8}}</td>
+                    <td>{{b.9}}</td>
+                    <td>{{b.10}}</td>
+                </tr>
+                {% endif %}
+                {%  endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+</body>
+{%endblock%}

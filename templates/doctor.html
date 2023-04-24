@@ -1,0 +1,48 @@
+{% extends "adminlayout.html" %}
+{% block content %}
+<body>
+    <div class="m-3">
+        <h3 class="text-center text-secondary" style="font-family: 'Alkatra', cursive; margin-top: 2%;"><img src="../static/stethoscope-1.1s-200px.svg" alt="" height="5%" width="5%">Doctor's List<img src="../static/stethoscope-1.1s-200px.svg" alt="" height="5%" width="5%"></h3>
+        {% for i in c %}
+        <h4 class="text-danger" style="font-family: 'Alkatra', cursive;">{{i}}</h4>
+        <table class="table" style="margin-top: 1%;">
+            <thead>
+                <tr class="bg-danger text-light">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Clinic Location</th>
+                    <th scope="col">Fee Amount</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for row in doctors %}
+                {% if row.6 == i %}
+                <tr>
+                    <td>{{row.0}}</td>
+                    <td>{{row.1}}</td>
+                    <td>{{row.2}}</td>
+                    <td>{{row.3}}</td>
+                    <td>{{row.4}}</td>
+                    <td>{{row.6}}</td>
+                    <td>{{row.5}}</td>
+                    <td>
+                        <a class="text-danger" href="/editdoctor/{{row.0}}">Edit</a>
+                        |
+                        <a class="text-danger" href="/delete/{{row.0}}" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>              
+                    </td>
+                </tr>
+                {% endif %}
+                {%endfor%}
+            </tbody>
+        </table>
+        {% endfor %}
+        <div class="text-center">
+            <a href="{{url_for('adddoctor')}}"> <button class="btn btn-outline-danger">Add Doctor Details</button> </a>
+        </div>
+    </div>
+</body>
+{%endblock%}

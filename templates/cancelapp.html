@@ -1,0 +1,35 @@
+{% extends "userlayout.html" %}
+{% block content %}
+<body>
+    <center>
+    <div class="container rounded shadow m-4 p-4" style="height: 35%; width: 35%;">
+        <form action="{{ url_for('cancel',user=user,msg=msg)}}" method="POST">
+            <h3 class="text-secondary text-center"><strong>CANCEL APPOINTMENT</strong></h3>
+            <hr>
+            <div>
+                {% if msg %}
+                    {% if msg=="Appointment Canceled!" or msg=="Appointment is already canceled" %}    
+                        <div class="alert alert-light alert-dismissible" role="alert" data-mdb-autohide="true" data-mdb-delay="20">
+                            {{msg}}    
+                            <span type="button" class="close btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></span>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger alert-dismissible" role="alert" data-mdb-autohide="true" data-mdb-delay="20">
+                            {{msg}}    
+                            <span type="button" class="close btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></span>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <label class="form-label text-danger" for="id"><strong>Enter Appointment ID</strong></label>
+            <input class="form-control" type="number" name="id" id="" min="1" required>
+            <br>
+            <button type="submit" class="form-control btn btn-outline-danger" id="liveAlertBtn"><strong>CANCEL</strong></button>
+        </form>
+        <br>
+        <img src="../static/undraw_cancel_re_pkdm.svg" alt="" height="50%" width="50%">
+    </div>
+    </center>
+</body>
+</html>
+{%endblock%}

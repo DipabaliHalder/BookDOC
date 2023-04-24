@@ -1,0 +1,41 @@
+{% extends "adminlayout.html" %}
+{% block content %}
+<body>
+    <div class="container rounded" style="background-color: #F35650; margin-top: 20px; margin-right: 9.5%;">
+        <div class="row">
+            <div class="col-4" style="background-color: white;">
+                <img src="../static/Hello-cuate.svg" alt="">
+            </div>
+            <div class="col-8 text-light">
+                <h1 style="font-family: 'Alkatra', cursive; margin-left:10px; margin-top: 20px; margin-bottom: 0px;">Welcome ADMIN</h1>
+                <h5 style="font-family: 'Alkatra', cursive; margin-left:10px;">have a nice day.</h5>
+                <div class="container rounded" style="font-family: 'Alkatra', cursive; margin-left: 5%; margin-top: 5%;">
+                    <h4>
+                        "Only a doctor is blessed with the magical powers
+                        <br>
+                         to treat a life to bring health into out lives and to be there with us 
+                         <br>
+                         when we have lost all the hopes."
+                    </h4>
+                    <div class="row">
+                        <div class="col-8"></div>
+                        <div class="col-4" style="margin-left: 60%;"><img src="../static/City skyline-cuate.svg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class="container">
+        <form action="{{url_for('admin',d=d,u=u,b=b,p=p)}}" method="POST"></form>
+            <div class="row text-light">
+                <div class="col container rounded m-3 p-3 text-center" style="font-family: 'Alkatra', cursive; background-color: #F35650;"><h5>Doctors<hr style="color: white; background-color: white; height: 3px;">{{d}}</h5></div>
+                <div class="col container rounded m-3 p-3 text-center" style="font-family: 'Alkatra', cursive; background-color: #F35650;"><h5>Patients<hr style="color: white; background-color: white; height: 3px;">{{p}}</h5></div>
+                <div class="col container rounded m-3 p-3 text-center" style="font-family: 'Alkatra', cursive; background-color: #F35650;"><h5>Users<hr style="color: white; background-color: white; height: 3px;">{{u}}</h5></div>
+                <div class="col container rounded m-3 p-3 text-center" style="font-family: 'Alkatra', cursive; background-color: #F35650;"><h5>Appointments<hr style="color: white; background-color: white; height: 3px;">{{b}}</h5></div>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>
+{%endblock%}

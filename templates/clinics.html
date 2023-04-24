@@ -1,0 +1,35 @@
+{% extends "adminlayout.html" %}
+{% block content %}
+<body>
+    <div class="m-4">
+        <h3 class="text-secondary text-center" style="font-family: 'Alkatra', cursive;"><img src="../static/hospital-1.1s-200px.svg" alt="" height="5%" width="5%">Our Clinics<img src="../static/hospital-1.1s-200px.svg" alt="" height="5%" width="5%"></h3>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr class="bg-danger text-light">
+                        <th scope="col">Street</th>
+                        <th scope="col">City</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Pincode</th>
+                        <th scope="col">Contact No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%  for c in clinic %}
+                    <tr>
+                        <td>{{c.1}}</td>
+                        <td>{{c.2}}</td>
+                        <td>{{c.0}}</td>
+                        <td>{{c.3}}</td>
+                        <td>{{c.4}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <center>
+                <img src="../static/World-amico.svg" alt="" height="20%" width="20%">
+            </center>
+    </div>
+    </div>
+</body>
+{%endblock%}

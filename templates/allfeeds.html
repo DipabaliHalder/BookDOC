@@ -1,0 +1,28 @@
+{% extends "adminlayout.html" %}
+{% block content %}
+<body>
+    <div class="m-3">
+        <h3 class="text-secondary text-center" style="font-family: 'Alkatra', cursive; margin-top: 3%;"><img src="../static/star-1.1s-200px.svg" alt="" height="5%" width="5%">Feedbacks<img src="../static/star-1.1s-200px.svg" alt="" height="5%" width="5%"></h3>
+        <div>
+            <table class="table" style="margin-top: 1%;">
+                <thead>
+                    <tr class="bg-danger text-light">
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%  for f in feeds %}
+                    <tr>
+                        <td>{{f.0}}</td>
+                        <td>{{f.1}}</td>
+                        <td>{{f.2}}</td>
+                    </tr>
+                    {%  endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+{%endblock%}

@@ -1,0 +1,68 @@
+{% extends "userlayout.html" %}
+{% block content %}
+<body>
+    <div class="container" style="margin-top: 3.5%;">
+        <div class="row">
+            <div class="col-3 rounded border border-danger p-3">
+                <center>
+                    <img src="../static/undraw_pic_profile_re_7g2h.svg" alt="" height="30%" width="30%">
+                    <br>
+                </center>
+                <hr>
+                <h6 class="text-danger">Personal Details:</h6>
+                <div class="text-secondary" style="font-family: 'Alkatra', cursive;">
+                    Username: {{u[0][1]}}
+                    <br>
+                    Email: {{u[0][2]}}
+                    <br>
+                    Appointments booked: {{a}}
+                    <br>
+                    <center>
+                        <a href="/profile/{{session['username']}}" style="font-size: .9rem;" class="text-danger">Change profile details</a>
+                    </center>
+                    <hr>
+                </div>
+                <center>
+                    <img src="../static/Online calendar-pana.svg" alt="" height="85%" width="85%">
+                    <br>
+                    <div class="text-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                        <strong>We make it easier. Book an Appointment in 2 mins.</strong>
+                    </div>
+                </center>
+            </div>
+            <div class="col-9" style="font-family: 'Alkatra', cursive;">
+                <div class="container text-secondary">
+                    <div class="container row rounded shdow p-3 text-white" style="background-color: #F35650;">
+                        <div class="col-8">
+                            <h1>Welcome {{session['username']}}</h1>
+                            <hr>
+                            <h6 class="p-4">
+                                "Only a doctor is blessed with the magical powers
+                                <br>
+                                to treat a life to bring health into out lives and 
+                                <br>
+                                to be there with us when we have lost all the hopes."
+                            </h6>
+                        </div>
+                        <div class="col-4">
+                            <img src="../static/Cardiologist-amico.svg" alt="">
+                        </div>
+                    </div>
+                    <br>
+                    <center>    
+                        <img src="../static/Mail-bro.svg" alt="" height="15%" width="15%">
+                        <h5 class="text-danger">
+                            You have {{cnt}} appointments pending. Please have a look at the "App History" for more.
+                        </h5>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,36 @@
+{% extends "userlayout.html" %}
+{% block content %}
+<body>
+    <center>
+    <div class="container rounded shadow m-2 p-3" style="height: 35%; width: 35%;">
+        <form action="{{ url_for('feedback',user=user,msg=msg)}}" method="POST">
+            <h3 class="text-secondary text-center"><strong>FEEDBACK</strong></h3>
+            <hr>
+            <div>
+                {% if msg %}   
+                {% if msg=="Thanks for your feedback!" %} 
+                    <div class="alert alert-light alert-dismissible" role="alert" data-mdb-autohide="true" data-mdb-delay="20">
+                        {{msg}}    
+                        <span type="button" class="close btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></span>
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger alert-dismissible" role="alert" data-mdb-autohide="true" data-mdb-delay="20">
+                        {{msg}}    
+                        <span type="button" class="close btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></span>
+                    </div>
+                {% endif %}
+                {% endif %}
+            </div>
+            <div>
+                <label class="form-label text-danger" for="feedback"><strong>Please share your experience with us...</strong></label>
+                <textarea class="form-control" name="feedback" id="" placeholder="Please enter your feedback" cols="60" rows="3"></textarea>
+                <br>
+                <button type="submit" class="form-control btn btn-outline-danger"><strong>SUBMIT</strong></button>
+            </div>
+        </form>
+        <img src="../static/Feedback-rafiki.svg" alt="" height="60%" width="60%">
+    </div>
+    </center>
+</body>
+</html>
+{%endblock%}

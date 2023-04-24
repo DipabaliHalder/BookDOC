@@ -1,0 +1,52 @@
+{% extends "userlayout.html" %}
+{% block content %}
+<body>
+    <style>
+    </style>
+    <center>
+        <div class="rounded m-5 p-3 text-danger" style="width: 50%;">
+            <form action="{{url_for('location',user=user)}}" method="POST">
+                <script>
+                function getRadioValue(id) {
+                    var radioBtn = document.getElementById(id);
+                    return radioBtn;
+                }  
+                </script>
+                <div class="border border-danger p-3 rounded" style="background-color: white;">
+                    <h3 class="text-center text-secondary"><strong>APPOINTMENT LOCATION</strong></h3><hr>
+                        <strong>
+                        <div class="row">
+                            <div class="col-4"> 
+                                <input style="accent-color: #F35650;" type="radio" name="clinic" id="r1" value="Delhi" onclick="getRadioValue(this.id)" required>
+                                <br><label for="Delhi">Delhi</label>
+                                <img src="../static/gateway.svg" alt="" height="80%" width="80%">
+                            </div>
+                            <div class="col-4">
+                                <input style="accent-color: #F35650;" type="radio" name="clinic" id="r1" value="Karnataka" onclick="getRadioValue(this.id)">
+                                <br><label for="Karnataka">Karnataka</label>
+                                <img src="../static/karnataka.png" alt="" height="84%" width="84%">     
+                            </div>
+                            <div class="col-4">
+                                <input style="accent-color: #F35650;" type="radio" name="clinic" id="r1" value="Mumbai" onclick="getRadioValue(this.id)">
+                                <br><label for="Mumbai">Mumbai</label>                                
+                                <img src="../static/delhi.svg" alt="" height="80%" width="80%"> 
+                            </div>
+                        </div>
+                        <br>
+                        <button class="form-control btn btn btn-outline-danger" id="liveAlertBtn" type="submit">
+                            <strong>
+                                GO
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                </svg>
+                            </strong>
+                        </button>
+                    </strong>
+                </div>
+            </form>
+        </div>
+    </center>
+</body>
+</html>
+{%endblock%}

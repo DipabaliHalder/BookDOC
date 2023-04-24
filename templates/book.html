@@ -1,0 +1,88 @@
+{% extends "userlayout.html" %}
+{% block content %}
+<body>
+    <div class=" rounded shadow m-5 p-3">
+        <strong>
+        <h3 class="text-secondary" style="text-align: center;"><strong>BOOK APPOINTMENT</strong></h3>
+        <hr>
+        <form action="{{url_for('bookapp',user=user,msg=msg)}}" method="POST">
+            <div class="container">
+                <div class="row">
+                    {% if msg %}
+                        <div class="alert alert-danger alert-dismissible" role="alert" data-mdb-autohide="true">
+                            {{msg}}    
+                            <span type="button" class="close btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></span>
+                        </div>
+                    {% endif %}
+                    <div class="col-6">
+                        <h5 class="text-danger" style="text-align: center;"> <strong>Appointment Details</strong></h5>
+                        <label for="doctor" class="form-label text-secondary">Doctor's Name</label>
+                        <select class="dropdown form-control form-select" name="doctor" id="" required>
+                            <div>
+                            {% for d in doctor %}
+                                {% if d[1]=='Select any one' %}
+                                    <option class="dropdown-content" value="{{d[0]}}" disabled selected>{{d[1]}}</option>
+                                {% else %}
+                                    <option class="dropdown-content" value="{{d.0}}">{{d[1]}}({{d[2]}})</option>
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                        </select>
+                        <br>
+                        <label class="form-label text-secondary" for="date">Date</label>
+                        <input class="form-control" type="date" name="date" id="inputdate" required>
+                        <br>
+                        <label class="form-label text-secondary" for="time">Time</label><br>
+                        <input style="accent-color: #F35650; margin-left: 5%;" type="radio" name="time" id="" value="09:00 AM - 09:30 AM" required>
+                        <label class="form-label text-secondary" for="time">09:00 AM - 09:30 AM</label>
+                        <input style="accent-color: #F35650; margin-left: 20%;" type="radio" name="time" id="" value="09:30 AM - 10:00 AM" style="margin-left: 10%;">
+                        <label class="form-label text-secondary" for="time">09:30 AM - 10:00 AM</label>
+                        <br>
+                        <input style="accent-color: #F35650; margin-left: 5%;" type="radio" name="time" id="" value="10:00 AM - 10:30 AM">
+                        <label class="form-label text-secondary" for="time">10:00 AM - 10:30 AM</label>
+                        <input style="accent-color: #F35650;  margin-left: 20%;" type="radio" name="time" id="" value="10:30 AM - 11:00 AM" style="margin-left: 10%;">
+                        <label class="form-label text-secondary" for="time">10:30 AM - 11:00 AM</label>
+                        <br>
+                        <input style="accent-color: #F35650; margin-left: 5%;" type="radio" name="time" id="" value="11:00 AM - 11:30 AM">
+                        <label class="form-label text-secondary" for="time">11:00 AM - 11:30 AM</label>
+                        <input style="accent-color: #F35650;  margin-left: 20%;" type="radio" name="time" id="" value="11:30 AM - 12:00 PM" style="margin-left: 10%;">
+                        <label class="form-label text-secondary" for="time">11:30 AM - 12:00 PM</label>
+                        <br>
+                        <input style="accent-color: #F35650; margin-left: 5%;" type="radio" name="time" id="" value="02:00 PM - 02:30 PM">
+                        <label class="form-label text-secondary" for="time">02:00 PM - 02:30 PM</label>
+                        <input style="accent-color: #F35650;  margin-left: 20%;" type="radio" name="time" id="" value="02:30 PM - 03:00 PM" style="margin-left: 10%;">
+                        <label class="form-label text-secondary" for="time">02:30 PM - 03:00 PM</label>
+                        <br>
+                        <input style="accent-color: #F35650; margin-left: 5%;" type="radio" name="time" id="" value="03:00 PM - 03:30 PM">
+                        <label class="form-label text-secondary" for="time">03:00 PM - 03:30 PM</label>
+                        <input style="accent-color: #F35650;  margin-left: 20%;" type="radio" name="time" id="" value="03:30 PM - 04:00 PM" style="margin-left: 10%;">
+                        <label class="form-label text-secondary" for="time">03:30 PM - 04:00 PM</label>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="text-danger" style="text-align: center;"><strong>Patient Details</strong></h5>
+                        <label class="form-label text-secondary" for="patname">Patient Name</label>
+                        <input class="form-control" type="text" name="patname" id="" required>
+                        <br>
+                        <label class="form-label text-secondary" for="gender">Gender</label><br>
+                        <input style="accent-color: #F35650; margin-left: 20%;" type="radio" name="gender" id="" value="Male" required>
+                        <label class="form-label text-secondary" for="gender">Male</label>
+                        <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="gender" id="" value="Female" required>
+                        <label class="form-label text-secondary" for="gender">Female</label>
+                        <input style="accent-color: #F35650; margin-left: 10%;" type="radio" name="gender" id="" value="Others" required>
+                        <label class="form-label text-secondary" for="gender">Others</label>
+                        <br>
+                        <label class="form-label text-secondary" for="age">Age</label>
+                        <input class="form-control" type="number" name="age" id="" min="0" max="100" required><br>
+                        <center><img src="../static/undraw_doctor_kw-5-l.svg" alt="" height="39%" width="39%"></center>
+                    </div>
+                    <center>
+                    <button type="submit" class="form-control btn btn btn-outline-danger" id="liveAlertBtn" style="width: 75%;"><strong>BOOK</strong></button>
+                    </center>
+                </div>
+            </div>
+        </form>
+    </strong>
+</div>
+</body>
+</html>
+{%endblock%}
